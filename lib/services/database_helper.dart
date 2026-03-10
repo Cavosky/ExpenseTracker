@@ -35,6 +35,11 @@ class DatabaseHelper {
   Future _createDB(Database db, int version) async {
     // Definizione dello schema (DDL)
     await db.execute('''
+      CREATE TABLE products(
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT NOT NULL,
+        price REAL NOT NULL
+      );
       CREATE TABLE category(
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         name TEXT NOT NULL

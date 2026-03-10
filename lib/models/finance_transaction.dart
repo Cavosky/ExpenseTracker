@@ -1,4 +1,4 @@
-import 'package:expense_tracker/models/Category.dart';
+import 'package:expense_tracker/models/category.dart';
 
 class FinanceTransaction {
   final int? id;
@@ -7,7 +7,7 @@ class FinanceTransaction {
   final DateTime date;
   final List<Category> categories;
 
-  const FinanceTransaction(
+  FinanceTransaction(
       {this.id,
       required this.title,
       required this.amount,
