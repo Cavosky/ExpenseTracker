@@ -1,3 +1,5 @@
+import 'package:expense_tracker/screens/setting_screen.dart';
+import 'package:expense_tracker/screens/stats_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -9,6 +11,12 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
+
+  static const List<Widget> _pages = <Widget>[
+    StatsScreen(),
+    StatsScreen(),
+    SettingsScreen()
+  ];
 
   @override
   void initState() {
@@ -25,6 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text("Expense Tracker")),
+      body: _pages[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
